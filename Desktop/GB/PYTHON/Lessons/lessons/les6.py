@@ -7,7 +7,7 @@
 
 
 
-#2. Есть два списка: tutors - имена учеников, groups - названия их классов. 
+#Задание 2. Есть два списка: tutors - имена учеников, groups - названия их классов. 
 # Необходимо сформировать список кортежей вида (tutor, group).
 # Техническое задание
 
@@ -20,18 +20,34 @@
 # Подтвердите работоспособность(выведите в консоль результаты) для обоих вариантов: groups меньше tutors и tutors меньше groups.
 # Сделайте сначала задание через циклы обычным образом, затем оформите решение в "одну строку" в виде comprehensions
 
-from itertools import zip_longest
+# from itertools import zip_longest
 
-tutors1 = ['Иван', 'Анастасия', 'Петр', 'Сергей', 'Дмитрий', 'Борис', 'Елена']
-groups1 = ['9А', '7В', '9Б', '9В', '8Б', '10А', '10Б', '9А']
+# tutors1 = ['Иван', 'Анастасия', 'Петр', 'Сергей', 'Дмитрий', 'Борис', 'Елена']
+# groups1 = ['9А', '7В', '9Б', '9В', '8Б', '10А', '10Б', '9А']
 
-tutors2 = ['Иван', 'Анастасия', 'Петр', 'Сергей', 'Дмитрий', 'Борис', 'Елена']
-groups2 = ['9А', '7В', '9Б', '9В']
+# tutors2 = ['Иван', 'Анастасия', 'Петр', 'Сергей', 'Дмитрий', 'Борис', 'Елена']
+# groups2 = ['9А', '7В', '9Б', '9В']
 
-def result_lst(tutors, groups):
-    result = [(tutors[i], groups[i]) if i < len(groups) else (tutors[i], None)  for i in range(len(tutors))]
-    return result
+# def result_lst(tutors, groups):
+#     result = [(tutors[i], groups[i]) if i < len(groups) else (tutors[i], None)  for i in range(len(tutors))]
+#     return result
 
-print(list(zip(tutors1, groups1)))
-print(list(zip_longest(tutors2, groups2)))
+# print(list(zip(tutors1, groups1)))
+# print(list(zip_longest(tutors2, groups2)))
 
+
+
+# Задание 3. Задан список чисел. Необходимо создать список, содержащий те его элементы, значения которых больше предыдущего.
+# Техническое задание
+
+# Можно использовать comprehensions.
+# Формально первый элемент сравнить не с чем. Решите сами, что с ним делать: включать в новый список или нет. Можете сравнить его с последним элементом.
+# Примеры/Тесты:
+
+
+# src = [300, 2, 12, 44, 1, 1, 4, 10, 7, 1, 78, 123, 55]
+# result = [12, 44, 4, 10, 78, 123]
+
+src = [300, 2, 12, 44, 1, 1, 4, 10, 7, 1, 78, 123, 55]
+num_list=[src[i+1] for i in range(len(src)-1) if src[i] < src[i+1]]
+print(num_list)
